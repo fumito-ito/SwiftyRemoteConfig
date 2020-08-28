@@ -10,10 +10,19 @@
 		0A56AD1624D9A47B003750B6 /* SwiftyRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */; };
 		0A56AD1B24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56AD1A24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift */; };
 		0A56AD1D24D9A47B003750B6 /* SwiftyRemoteConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A66507224EC3F7E00DF9C19 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A66507124EC3F7E00DF9C19 /* README.md */; };
+		0A726E9C24EC3D7C006C01A3 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		0A56AD1724D9A47B003750B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A56AD0324D9A47B003750B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A56AD0B24D9A47B003750B6;
+			remoteInfo = SwiftyRemoteConfig;
+		};
+		0AC2343E24F555FA0000770F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0A56AD0324D9A47B003750B6 /* Project object */;
 			proxyType = 1;
@@ -29,6 +38,9 @@
 		0A56AD1524D9A47B003750B6 /* SwiftyRemoteConfigTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyRemoteConfigTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A56AD1A24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRemoteConfigTests.swift; sourceTree = "<group>"; };
 		0A56AD1C24D9A47B003750B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A66507124EC3F7E00DF9C19 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		0A726E9D24EC3DA2006C01A3 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +65,10 @@
 		0A56AD0224D9A47B003750B6 = {
 			isa = PBXGroup;
 			children = (
-				0A56AD0E24D9A47B003750B6 /* SwiftyRemoteConfig */,
-				0A56AD1924D9A47B003750B6 /* SwiftyRemoteConfigTests */,
+				0A66507124EC3F7E00DF9C19 /* README.md */,
+				0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */,
+				0A56AD0E24D9A47B003750B6 /* Sources */,
+				0A726E9F24EC3DF9006C01A3 /* Tests */,
 				0A56AD0D24D9A47B003750B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,13 +82,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A56AD0E24D9A47B003750B6 /* SwiftyRemoteConfig */ = {
+		0A56AD0E24D9A47B003750B6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */,
-				0A56AD1024D9A47B003750B6 /* Info.plist */,
+				0AC8312C24EC3C95004FF8D2 /* SwiftyRemoteConfig */,
 			);
-			path = SwiftyRemoteConfig;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		0A56AD1924D9A47B003750B6 /* SwiftyRemoteConfigTests */ = {
@@ -82,10 +95,27 @@
 			children = (
 				0A56AD1A24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift */,
 				0A56AD1C24D9A47B003750B6 /* Info.plist */,
+				0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */,
 			);
 			path = SwiftyRemoteConfigTests;
 			sourceTree = "<group>";
 		};
+		0A726E9F24EC3DF9006C01A3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A56AD1924D9A47B003750B6 /* SwiftyRemoteConfigTests */,
+				0A726E9D24EC3DA2006C01A3 /* LinuxMain.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0AC8312C24EC3C95004FF8D2 /* SwiftyRemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0A56AD1024D9A47B003750B6 /* Info.plist */,
+			);
+			path = SwiftyRemoteConfig;
+			sourceTree = "<group>";
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -142,15 +172,19 @@
 		0A56AD0324D9A47B003750B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Fumito Ito";
 				TargetAttributes = {
 					0A56AD0B24D9A47B003750B6 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					0A56AD1424D9A47B003750B6 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					0AC2342724F555D40000770F = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -178,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A66507224EC3F7E00DF9C19 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A56AD1B24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift in Sources */,
+				0A726E9C24EC3D7C006C01A3 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC2342424F555D40000770F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,22 +383,30 @@
 		0A56AD2124D9A47B003750B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K489QY5CFD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftyRemoteConfig/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftyRemoteConfig/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyRemoteConfig";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,22 +415,29 @@
 		0A56AD2224D9A47B003750B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K489QY5CFD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftyRemoteConfig/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SwiftyRemoteConfig/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyRemoteConfig";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,6 +446,7 @@
 		0A56AD2424D9A47B003750B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K489QY5CFD;
 				INFOPLIST_FILE = SwiftyRemoteConfigTests/Info.plist;
@@ -406,6 +465,7 @@
 		0A56AD2524D9A47B003750B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K489QY5CFD;
 				INFOPLIST_FILE = SwiftyRemoteConfigTests/Info.plist;
