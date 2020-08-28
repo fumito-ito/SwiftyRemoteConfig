@@ -12,6 +12,7 @@
 		0A37811724E6E4A700095153 /* RemoteConfigKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811624E6E4A700095153 /* RemoteConfigKeys.swift */; };
 		0A37811924E6E4D600095153 /* RemoteConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811824E6E4D600095153 /* RemoteConfigKey.swift */; };
 		0A37811B24E6EDA000095153 /* RemoteConfigAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811A24E6EDA000095153 /* RemoteConfigAdapter.swift */; };
+		0A37BCF424F6A1ED004EED03 /* RemoteConfigKeys+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37BCF324F6A1ED004EED03 /* RemoteConfigKeys+Extensions.swift */; };
 		0A463E9A24EECEE1006AA3C7 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761924E4405D00471622 /* FirebaseABTesting.framework */; };
 		0A463E9C24EECEE1006AA3C7 /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */; };
 		0A463E9E24EECEE1006AA3C7 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761B24E4405D00471622 /* Protobuf.framework */; };
@@ -33,10 +34,37 @@
 		0A57EB3D24F16E4D00BFBC7F /* RemoteConfigObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB3C24F16E4D00BFBC7F /* RemoteConfigObserver.swift */; };
 		0A57EB3F24F2962D00BFBC7F /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB3E24F2962D00BFBC7F /* PropertyWrappers.swift */; };
 		0A57EB4124F2A2FC00BFBC7F /* RemoteConfig+Observing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB4024F2A2FC00BFBC7F /* RemoteConfig+Observing.swift */; };
+		0A5B761C24E4405D00471622 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761924E4405D00471622 /* FirebaseABTesting.framework */; };
+		0A5B761E24E4405D00471622 /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */; };
+		0A5B762024E4405D00471622 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761B24E4405D00471622 /* Protobuf.framework */; };
 		0A66507224EC3F7E00DF9C19 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A66507124EC3F7E00DF9C19 /* README.md */; };
 		0A726E9C24EC3D7C006C01A3 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */; };
 		0AAE133824E440C900E86EEF /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE133724E440C900E86EEF /* RemoteConfig.swift */; };
 		0AAE133A24E444B100E86EEF /* RemoteConfigBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE133924E444B100E86EEF /* RemoteConfigBridge.swift */; };
+		0AC2342B24F555D40000770F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2342A24F555D40000770F /* AppDelegate.swift */; };
+		0AC2342D24F555D40000770F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2342C24F555D40000770F /* SceneDelegate.swift */; };
+		0AC2342F24F555D40000770F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2342E24F555D40000770F /* ContentView.swift */; };
+		0AC2343124F555D50000770F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2343024F555D50000770F /* Assets.xcassets */; };
+		0AC2343424F555D50000770F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2343324F555D50000770F /* Preview Assets.xcassets */; };
+		0AC2343724F555D50000770F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC2343524F555D50000770F /* LaunchScreen.storyboard */; };
+		0AC2343C24F555FA0000770F /* SwiftyRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */; };
+		0AC2343D24F555FA0000770F /* SwiftyRemoteConfig.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0AC2344124F556280000770F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EC424EED80D006AA3C7 /* StoreKit.framework */; };
+		0AC2344224F556300000770F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EC224EED7FD006AA3C7 /* AdSupport.framework */; };
+		0AC2344324F556490000770F /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA924EECEE1006AA3C7 /* FIRAnalyticsConnector.framework */; };
+		0AC2344524F556490000770F /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA324EECEE1006AA3C7 /* Firebase.framework */; };
+		0AC2344724F556490000770F /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761924E4405D00471622 /* FirebaseABTesting.framework */; };
+		0AC2344924F556490000770F /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA724EECEE1006AA3C7 /* FirebaseAnalytics.framework */; };
+		0AC2344B24F556490000770F /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA824EECEE1006AA3C7 /* FirebaseCore.framework */; };
+		0AC2344D24F556490000770F /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EAA24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework */; };
+		0AC2344F24F556490000770F /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA224EECEE1006AA3C7 /* FirebaseInstallations.framework */; };
+		0AC2345124F556490000770F /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */; };
+		0AC2345324F556490000770F /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA524EECEE1006AA3C7 /* GoogleAppMeasurement.framework */; };
+		0AC2345524F556490000770F /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA424EECEE1006AA3C7 /* GoogleDataTransport.framework */; };
+		0AC2345724F556490000770F /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA624EECEE1006AA3C7 /* GoogleUtilities.framework */; };
+		0AC2345924F556490000770F /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EAB24EECEE1006AA3C7 /* nanopb.framework */; };
+		0AC2345B24F556490000770F /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA124EECEE1006AA3C7 /* PromisesObjC.framework */; };
+		0AC2345D24F556490000770F /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761B24E4405D00471622 /* Protobuf.framework */; };
 		0AC2346324F55A9B0000770F /* BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2346124F55A7D0000770F /* BuiltIns.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +105,7 @@
 		0A37811624E6E4A700095153 /* RemoteConfigKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigKeys.swift; sourceTree = "<group>"; };
 		0A37811824E6E4D600095153 /* RemoteConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigKey.swift; sourceTree = "<group>"; };
 		0A37811A24E6EDA000095153 /* RemoteConfigAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigAdapter.swift; sourceTree = "<group>"; };
+		0A37BCF324F6A1ED004EED03 /* RemoteConfigKeys+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteConfigKeys+Extensions.swift"; sourceTree = "<group>"; };
 		0A463EA124EECEE1006AA3C7 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		0A463EA224EECEE1006AA3C7 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
 		0A463EA324EECEE1006AA3C7 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
@@ -108,6 +137,14 @@
 		0A726E9D24EC3DA2006C01A3 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		0AAE133724E440C900E86EEF /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		0AAE133924E444B100E86EEF /* RemoteConfigBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridge.swift; sourceTree = "<group>"; };
+		0AC2342824F555D40000770F /* SwiftyRemoteConfigExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyRemoteConfigExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC2342A24F555D40000770F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0AC2342C24F555D40000770F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0AC2342E24F555D40000770F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0AC2343024F555D50000770F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AC2343324F555D50000770F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0AC2343624F555D50000770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0AC2343824F555D50000770F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC2346124F55A7D0000770F /* BuiltIns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltIns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +223,7 @@
 				0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */,
 				0A56AD0E24D9A47B003750B6 /* Sources */,
 				0A726E9F24EC3DF9006C01A3 /* Tests */,
+				0AC2342924F555D40000770F /* SwiftyRemoteConfigExample */,
 				0A56AD0D24D9A47B003750B6 /* Products */,
 				0A5B761824E4405D00471622 /* Frameworks */,
 			);
@@ -196,6 +234,7 @@
 			children = (
 				0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */,
 				0A56AD1524D9A47B003750B6 /* SwiftyRemoteConfigTests.xctest */,
+				0AC2342824F555D40000770F /* SwiftyRemoteConfigExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +296,29 @@
 				0A726E9D24EC3DA2006C01A3 /* LinuxMain.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		0AC2342924F555D40000770F /* SwiftyRemoteConfigExample */ = {
+			isa = PBXGroup;
+			children = (
+				0AC2342A24F555D40000770F /* AppDelegate.swift */,
+				0AC2342C24F555D40000770F /* SceneDelegate.swift */,
+				0AC2342E24F555D40000770F /* ContentView.swift */,
+				0AC2343024F555D50000770F /* Assets.xcassets */,
+				0AC2343524F555D50000770F /* LaunchScreen.storyboard */,
+				0AC2343824F555D50000770F /* Info.plist */,
+				0AC2343224F555D50000770F /* Preview Content */,
+				0A37BCF324F6A1ED004EED03 /* RemoteConfigKeys+Extensions.swift */,
+			);
+			path = SwiftyRemoteConfigExample;
+			sourceTree = "<group>";
+		};
+		0AC2343224F555D50000770F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0AC2343324F555D50000770F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		0AC8312C24EC3C95004FF8D2 /* SwiftyRemoteConfig */ = {
@@ -328,6 +390,25 @@
 			productReference = 0A56AD1524D9A47B003750B6 /* SwiftyRemoteConfigTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0AC2342724F555D40000770F /* SwiftyRemoteConfigExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC2343B24F555D50000770F /* Build configuration list for PBXNativeTarget "SwiftyRemoteConfigExample" */;
+			buildPhases = (
+				0AC2342424F555D40000770F /* Sources */,
+				0AC2342524F555D40000770F /* Frameworks */,
+				0AC2342624F555D40000770F /* Resources */,
+				0AC2344024F555FA0000770F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0AC2343F24F555FA0000770F /* PBXTargetDependency */,
+			);
+			name = SwiftyRemoteConfigExample;
+			productName = SwiftyRemoteConfigExample;
+			productReference = 0AC2342824F555D40000770F /* SwiftyRemoteConfigExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -365,6 +446,7 @@
 			targets = (
 				0A56AD0B24D9A47B003750B6 /* SwiftyRemoteConfig */,
 				0A56AD1424D9A47B003750B6 /* SwiftyRemoteConfigTests */,
+				0AC2342724F555D40000770F /* SwiftyRemoteConfigExample */,
 			);
 		};
 /* End PBXProject section */
@@ -382,6 +464,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC2342624F555D40000770F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC2343724F555D50000770F /* LaunchScreen.storyboard in Resources */,
+				0AC2343424F555D50000770F /* Preview Assets.xcassets in Resources */,
+				0AC2343124F555D50000770F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +512,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC2342B24F555D40000770F /* AppDelegate.swift in Sources */,
+				0AC2342D24F555D40000770F /* SceneDelegate.swift in Sources */,
+				0AC2342F24F555D40000770F /* ContentView.swift in Sources */,
+				0A37BCF424F6A1ED004EED03 /* RemoteConfigKeys+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +527,23 @@
 			target = 0A56AD0B24D9A47B003750B6 /* SwiftyRemoteConfig */;
 			targetProxy = 0A56AD1724D9A47B003750B6 /* PBXContainerItemProxy */;
 		};
+		0AC2343F24F555FA0000770F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A56AD0B24D9A47B003750B6 /* SwiftyRemoteConfig */;
+			targetProxy = 0AC2343E24F555FA0000770F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0AC2343524F555D50000770F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AC2343624F555D50000770F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0A56AD1E24D9A47B003750B6 /* Debug */ = {
@@ -655,6 +767,56 @@
 			};
 			name = Release;
 		};
+		0AC2343924F555D50000770F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftyRemoteConfigExample/Preview Content\"";
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SwiftyRemoteConfigExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyRemoteConfigExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AC2343A24F555D50000770F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftyRemoteConfigExample/Preview Content\"";
+				DEVELOPMENT_TEAM = K489QY5CFD;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SwiftyRemoteConfigExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.fumito-ito.SwiftyRemoteConfigExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -681,6 +843,15 @@
 			buildConfigurations = (
 				0A56AD2424D9A47B003750B6 /* Debug */,
 				0A56AD2524D9A47B003750B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AC2343B24F555D50000770F /* Build configuration list for PBXNativeTarget "SwiftyRemoteConfigExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC2343924F555D50000770F /* Debug */,
+				0AC2343A24F555D50000770F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
