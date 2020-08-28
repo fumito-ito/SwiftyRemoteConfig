@@ -7,11 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2EC7A724F00AFB0010CB11 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2EC7A624F00AFB0010CB11 /* OptionalType.swift */; };
+		0A37811524E6E3FB00095153 /* RemoteConfigSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811424E6E3FB00095153 /* RemoteConfigSerializable.swift */; };
+		0A37811724E6E4A700095153 /* RemoteConfigKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811624E6E4A700095153 /* RemoteConfigKeys.swift */; };
+		0A37811924E6E4D600095153 /* RemoteConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811824E6E4D600095153 /* RemoteConfigKey.swift */; };
+		0A37811B24E6EDA000095153 /* RemoteConfigAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37811A24E6EDA000095153 /* RemoteConfigAdapter.swift */; };
+		0A463E9A24EECEE1006AA3C7 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761924E4405D00471622 /* FirebaseABTesting.framework */; };
+		0A463E9C24EECEE1006AA3C7 /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */; };
+		0A463E9E24EECEE1006AA3C7 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5B761B24E4405D00471622 /* Protobuf.framework */; };
+		0A463EAC24EECEE1006AA3C7 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA124EECEE1006AA3C7 /* PromisesObjC.framework */; };
+		0A463EAE24EECEE1006AA3C7 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA224EECEE1006AA3C7 /* FirebaseInstallations.framework */; };
+		0A463EB224EECEE1006AA3C7 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA424EECEE1006AA3C7 /* GoogleDataTransport.framework */; };
+		0A463EB424EECEE1006AA3C7 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA524EECEE1006AA3C7 /* GoogleAppMeasurement.framework */; };
+		0A463EB624EECEE1006AA3C7 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA624EECEE1006AA3C7 /* GoogleUtilities.framework */; };
+		0A463EB824EECEE1006AA3C7 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA724EECEE1006AA3C7 /* FirebaseAnalytics.framework */; };
+		0A463EBA24EECEE1006AA3C7 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA824EECEE1006AA3C7 /* FirebaseCore.framework */; };
+		0A463EBC24EECEE1006AA3C7 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EA924EECEE1006AA3C7 /* FIRAnalyticsConnector.framework */; };
+		0A463EBE24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EAA24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework */; };
+		0A463EC024EECEE1006AA3C7 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EAB24EECEE1006AA3C7 /* nanopb.framework */; };
+		0A463EC524EED80D006AA3C7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A463EC424EED80D006AA3C7 /* StoreKit.framework */; };
+		0A463EC724EED9DE006AA3C7 /* RemoteConfig+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A463EC624EED9DE006AA3C7 /* RemoteConfig+Subscripts.swift */; };
 		0A56AD1624D9A47B003750B6 /* SwiftyRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */; };
 		0A56AD1B24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A56AD1A24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift */; };
 		0A56AD1D24D9A47B003750B6 /* SwiftyRemoteConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A57EB3D24F16E4D00BFBC7F /* RemoteConfigObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB3C24F16E4D00BFBC7F /* RemoteConfigObserver.swift */; };
+		0A57EB3F24F2962D00BFBC7F /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB3E24F2962D00BFBC7F /* PropertyWrappers.swift */; };
+		0A57EB4124F2A2FC00BFBC7F /* RemoteConfig+Observing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A57EB4024F2A2FC00BFBC7F /* RemoteConfig+Observing.swift */; };
 		0A66507224EC3F7E00DF9C19 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A66507124EC3F7E00DF9C19 /* README.md */; };
 		0A726E9C24EC3D7C006C01A3 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */; };
+		0AAE133824E440C900E86EEF /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE133724E440C900E86EEF /* RemoteConfig.swift */; };
+		0AAE133A24E444B100E86EEF /* RemoteConfigBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAE133924E444B100E86EEF /* RemoteConfigBridge.swift */; };
+		0AC2346324F55A9B0000770F /* BuiltIns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2346124F55A7D0000770F /* BuiltIns.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,16 +57,58 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0AC2344024F555FA0000770F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0AC2343D24F555FA0000770F /* SwiftyRemoteConfig.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0A2EC7A624F00AFB0010CB11 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
+		0A37811424E6E3FB00095153 /* RemoteConfigSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigSerializable.swift; sourceTree = "<group>"; };
+		0A37811624E6E4A700095153 /* RemoteConfigKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigKeys.swift; sourceTree = "<group>"; };
+		0A37811824E6E4D600095153 /* RemoteConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigKey.swift; sourceTree = "<group>"; };
+		0A37811A24E6EDA000095153 /* RemoteConfigAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigAdapter.swift; sourceTree = "<group>"; };
+		0A463EA124EECEE1006AA3C7 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
+		0A463EA224EECEE1006AA3C7 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
+		0A463EA324EECEE1006AA3C7 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
+		0A463EA424EECEE1006AA3C7 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
+		0A463EA524EECEE1006AA3C7 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		0A463EA624EECEE1006AA3C7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
+		0A463EA724EECEE1006AA3C7 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		0A463EA824EECEE1006AA3C7 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		0A463EA924EECEE1006AA3C7 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		0A463EAA24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		0A463EAB24EECEE1006AA3C7 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		0A463EC224EED7FD006AA3C7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		0A463EC424EED80D006AA3C7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0A463EC624EED9DE006AA3C7 /* RemoteConfig+Subscripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteConfig+Subscripts.swift"; sourceTree = "<group>"; };
 		0A56AD0C24D9A47B003750B6 /* SwiftyRemoteConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyRemoteConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A56AD0F24D9A47B003750B6 /* SwiftyRemoteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyRemoteConfig.h; sourceTree = "<group>"; };
 		0A56AD1024D9A47B003750B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A56AD1524D9A47B003750B6 /* SwiftyRemoteConfigTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyRemoteConfigTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A56AD1A24D9A47B003750B6 /* SwiftyRemoteConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyRemoteConfigTests.swift; sourceTree = "<group>"; };
 		0A56AD1C24D9A47B003750B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A57EB3C24F16E4D00BFBC7F /* RemoteConfigObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigObserver.swift; sourceTree = "<group>"; };
+		0A57EB3E24F2962D00BFBC7F /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
+		0A57EB4024F2A2FC00BFBC7F /* RemoteConfig+Observing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteConfig+Observing.swift"; sourceTree = "<group>"; };
+		0A5B761924E4405D00471622 /* FirebaseABTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseABTesting.framework; path = Carthage/Build/iOS/FirebaseABTesting.framework; sourceTree = "<group>"; };
+		0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseRemoteConfig.framework; path = Carthage/Build/iOS/FirebaseRemoteConfig.framework; sourceTree = "<group>"; };
+		0A5B761B24E4405D00471622 /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Protobuf.framework; path = Carthage/Build/iOS/Protobuf.framework; sourceTree = "<group>"; };
 		0A66507124EC3F7E00DF9C19 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A726E9B24EC3D7C006C01A3 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		0A726E9D24EC3DA2006C01A3 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		0AAE133724E440C900E86EEF /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+		0AAE133924E444B100E86EEF /* RemoteConfigBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigBridge.swift; sourceTree = "<group>"; };
+		0AC2346124F55A7D0000770F /* BuiltIns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltIns.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +116,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5B761C24E4405D00471622 /* FirebaseABTesting.framework in Frameworks */,
+				0A463EB424EECEE1006AA3C7 /* GoogleAppMeasurement.framework in Frameworks */,
+				0A463EAE24EECEE1006AA3C7 /* FirebaseInstallations.framework in Frameworks */,
+				0A463EC024EECEE1006AA3C7 /* nanopb.framework in Frameworks */,
+				0A463EBA24EECEE1006AA3C7 /* FirebaseCore.framework in Frameworks */,
+				0A463E9C24EECEE1006AA3C7 /* FirebaseRemoteConfig.framework in Frameworks */,
+				0A463E9A24EECEE1006AA3C7 /* FirebaseABTesting.framework in Frameworks */,
+				0A463EB624EECEE1006AA3C7 /* GoogleUtilities.framework in Frameworks */,
+				0A463EB224EECEE1006AA3C7 /* GoogleDataTransport.framework in Frameworks */,
+				0A463EC524EED80D006AA3C7 /* StoreKit.framework in Frameworks */,
+				0A5B761E24E4405D00471622 /* FirebaseRemoteConfig.framework in Frameworks */,
+				0A5B762024E4405D00471622 /* Protobuf.framework in Frameworks */,
+				0A463E9E24EECEE1006AA3C7 /* Protobuf.framework in Frameworks */,
+				0A463EAC24EECEE1006AA3C7 /* PromisesObjC.framework in Frameworks */,
+				0A463EBE24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				0A463EBC24EECEE1006AA3C7 /* FIRAnalyticsConnector.framework in Frameworks */,
+				0A463EB824EECEE1006AA3C7 /* FirebaseAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +144,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0AC2342524F555D40000770F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC2344524F556490000770F /* Firebase.framework in Frameworks */,
+				0AC2344F24F556490000770F /* FirebaseInstallations.framework in Frameworks */,
+				0AC2345B24F556490000770F /* PromisesObjC.framework in Frameworks */,
+				0AC2345324F556490000770F /* GoogleAppMeasurement.framework in Frameworks */,
+				0AC2343C24F555FA0000770F /* SwiftyRemoteConfig.framework in Frameworks */,
+				0AC2344124F556280000770F /* StoreKit.framework in Frameworks */,
+				0AC2344224F556300000770F /* AdSupport.framework in Frameworks */,
+				0AC2345D24F556490000770F /* Protobuf.framework in Frameworks */,
+				0AC2345724F556490000770F /* GoogleUtilities.framework in Frameworks */,
+				0AC2345924F556490000770F /* nanopb.framework in Frameworks */,
+				0AC2345124F556490000770F /* FirebaseRemoteConfig.framework in Frameworks */,
+				0AC2344B24F556490000770F /* FirebaseCore.framework in Frameworks */,
+				0AC2344924F556490000770F /* FirebaseAnalytics.framework in Frameworks */,
+				0AC2344D24F556490000770F /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				0AC2345524F556490000770F /* GoogleDataTransport.framework in Frameworks */,
+				0AC2344324F556490000770F /* FIRAnalyticsConnector.framework in Frameworks */,
+				0AC2344724F556490000770F /* FirebaseABTesting.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A2EC7A824F00B000010CB11 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0A2EC7A624F00AFB0010CB11 /* OptionalType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0A56AD0224D9A47B003750B6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +187,7 @@
 				0A56AD0E24D9A47B003750B6 /* Sources */,
 				0A726E9F24EC3DF9006C01A3 /* Tests */,
 				0A56AD0D24D9A47B003750B6 /* Products */,
+				0A5B761824E4405D00471622 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +218,38 @@
 			path = SwiftyRemoteConfigTests;
 			sourceTree = "<group>";
 		};
+		0A57EB3B24F16C4500BFBC7F /* Property Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0A57EB3C24F16E4D00BFBC7F /* RemoteConfigObserver.swift */,
+				0A57EB3E24F2962D00BFBC7F /* PropertyWrappers.swift */,
+			);
+			path = "Property Wrapper";
+			sourceTree = "<group>";
+		};
+		0A5B761824E4405D00471622 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A463EC424EED80D006AA3C7 /* StoreKit.framework */,
+				0A463EC224EED7FD006AA3C7 /* AdSupport.framework */,
+				0A463EA924EECEE1006AA3C7 /* FIRAnalyticsConnector.framework */,
+				0A463EA324EECEE1006AA3C7 /* Firebase.framework */,
+				0A463EA724EECEE1006AA3C7 /* FirebaseAnalytics.framework */,
+				0A463EA824EECEE1006AA3C7 /* FirebaseCore.framework */,
+				0A463EAA24EECEE1006AA3C7 /* FirebaseCoreDiagnostics.framework */,
+				0A463EA224EECEE1006AA3C7 /* FirebaseInstallations.framework */,
+				0A463EA524EECEE1006AA3C7 /* GoogleAppMeasurement.framework */,
+				0A463EA424EECEE1006AA3C7 /* GoogleDataTransport.framework */,
+				0A463EA624EECEE1006AA3C7 /* GoogleUtilities.framework */,
+				0A463EAB24EECEE1006AA3C7 /* nanopb.framework */,
+				0A463EA124EECEE1006AA3C7 /* PromisesObjC.framework */,
+				0A5B761924E4405D00471622 /* FirebaseABTesting.framework */,
+				0A5B761A24E4405D00471622 /* FirebaseRemoteConfig.framework */,
+				0A5B761B24E4405D00471622 /* Protobuf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0A726E9F24EC3DF9006C01A3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +262,22 @@
 		0AC8312C24EC3C95004FF8D2 /* SwiftyRemoteConfig */ = {
 			isa = PBXGroup;
 			children = (
+				0A57EB3B24F16C4500BFBC7F /* Property Wrapper */,
+				0A2EC7A824F00B000010CB11 /* Utils */,
 				0A56AD1024D9A47B003750B6 /* Info.plist */,
+				0AAE133724E440C900E86EEF /* RemoteConfig.swift */,
+				0AAE133924E444B100E86EEF /* RemoteConfigBridge.swift */,
+				0A37811424E6E3FB00095153 /* RemoteConfigSerializable.swift */,
+				0A37811624E6E4A700095153 /* RemoteConfigKeys.swift */,
+				0A37811824E6E4D600095153 /* RemoteConfigKey.swift */,
+				0A37811A24E6EDA000095153 /* RemoteConfigAdapter.swift */,
+				0A463EC624EED9DE006AA3C7 /* RemoteConfig+Subscripts.swift */,
+				0A57EB4024F2A2FC00BFBC7F /* RemoteConfig+Observing.swift */,
+				0AC2346124F55A7D0000770F /* BuiltIns.swift */,
 			);
 			path = SwiftyRemoteConfig;
 			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -230,6 +392,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A57EB4124F2A2FC00BFBC7F /* RemoteConfig+Observing.swift in Sources */,
+				0A37811524E6E3FB00095153 /* RemoteConfigSerializable.swift in Sources */,
+				0A57EB3D24F16E4D00BFBC7F /* RemoteConfigObserver.swift in Sources */,
+				0A37811B24E6EDA000095153 /* RemoteConfigAdapter.swift in Sources */,
+				0AAE133A24E444B100E86EEF /* RemoteConfigBridge.swift in Sources */,
+				0AAE133824E440C900E86EEF /* RemoteConfig.swift in Sources */,
+				0A37811924E6E4D600095153 /* RemoteConfigKey.swift in Sources */,
+				0AC2346324F55A9B0000770F /* BuiltIns.swift in Sources */,
+				0A2EC7A724F00AFB0010CB11 /* OptionalType.swift in Sources */,
+				0A37811724E6E4A700095153 /* RemoteConfigKeys.swift in Sources */,
+				0A57EB3F24F2962D00BFBC7F /* PropertyWrappers.swift in Sources */,
+				0A463EC724EED9DE006AA3C7 /* RemoteConfig+Subscripts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
