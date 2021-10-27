@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
   spec.swift_version = "5.0", "5.1", "5.2"
 
   spec.static_framework = true
-  spec.dependency "FirebaseRemoteConfig", "~> 4.9.0"
+  spec.dependency "FirebaseRemoteConfig", "~> 8.8.0"
 
 end
