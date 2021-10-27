@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftyRemoteConfig",
+    platforms: [
+        .iOS(.v11),
+    ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -15,8 +18,7 @@ let package = Package(
         .package(
             name: "Firebase",
             url: "https://github.com/firebase/firebase-ios-sdk.git",
-            .upToNextMajor(from: "8.0.0")
-  )
+            .upToNextMajor(from: "8.0.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
