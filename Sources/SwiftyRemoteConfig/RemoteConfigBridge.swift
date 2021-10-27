@@ -56,7 +56,7 @@ public struct RemoteConfigIntBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Int? {
-        return remoteConfig.configValue(forKey: key).numberValue?.intValue
+        return remoteConfig.configValue(forKey: key).numberValue.intValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> Int? {
@@ -68,7 +68,7 @@ public struct RemoteConfigDoubleBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Double? {
-        return remoteConfig.configValue(forKey: key).numberValue?.doubleValue
+        return remoteConfig.configValue(forKey: key).numberValue.doubleValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> Double? {
