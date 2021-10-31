@@ -17,4 +17,4 @@ jobs:
       - name: Publish to Cocoapods registry
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-        run: pod trunk push SwiftyRemoteConfig.podspec
+        run: pod trunk push SwiftyRemoteConfig.podspec --allow-warnings
