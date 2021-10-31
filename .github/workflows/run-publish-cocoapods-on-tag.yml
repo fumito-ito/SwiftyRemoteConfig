@@ -1,6 +1,9 @@
 name: Publish Cocoapods
 
-on: [tag]
+on:
+  create:
+    tags:
+    - '*'
 
 jobs:
   build:
