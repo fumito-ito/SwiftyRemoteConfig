@@ -1,5 +1,7 @@
 /Package
 /.build
+*.DS_Store
+Example/SwiftyRemoteConfigExample/GoogleService-Info.plist
 
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,ios
 # Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,ios
@@ -47,7 +49,7 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
 # Packages/
 # Package.pins
-# Package.resolved
+Package.resolved
 # *.xcodeproj
 # Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
 # hence it is not needed unless you have added a package configuration file to your project
@@ -68,6 +70,7 @@ Pods/
 # Carthage/Checkouts
 
 Carthage/Build/
+Cartfile.resolved
 
 # Accio dependency management
 Dependencies/

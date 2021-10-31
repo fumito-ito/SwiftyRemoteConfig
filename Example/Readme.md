@@ -21,8 +21,4 @@
 1. download `GoogleService-Info.plist` from your Firebase project.
 1. drag and drop the file into example app
 
-### 5. Add firebase SDKs to exmpale app
-
-1. run `carthage bootstrap --platform iOS`
-
-### 6. Run app!
+### 5. Run app!

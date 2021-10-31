@@ -1,0 +1,17 @@
+name: Publish Cocoapods
+
+on: [tag]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint Cocoapods
+        run: pod lib lint --allow-warnings
+      - name: Publish to Cocoapods registry
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: pod trunk push SwiftyRemoteConfig.podspec
