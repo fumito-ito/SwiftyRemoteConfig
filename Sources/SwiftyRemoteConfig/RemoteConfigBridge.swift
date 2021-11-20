@@ -80,6 +80,10 @@ public struct RemoteConfigBoolBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Bool? {
+        if remoteConfig.configValue(forKey: key).stringValue?.isEmpty == true {
+            return nil
+        }
+        
         return remoteConfig.configValue(forKey: key).boolValue
     }
 
