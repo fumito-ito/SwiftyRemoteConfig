@@ -232,62 +232,6 @@ extension Data: RemoteConfigSerializable {
 ```
 Also, take a look at our source code or tests to see more examples of bridges. If you find yourself confused with all these bridges, please create an issue and we will figure something out.
 
-## Property wrappers
-
-SwiftyRemoteConfig provides property wrappers for Swift 5.1! The property wrapper, `@SwiftyRemoteConfig`, provides an option to use it with key path and options: caching or observing.
-
-*Caching* means that we will store the value for you and do not hit the `RemoteConfigs` for value almost never, only for the first value fetch.
-
-*Observing* means we will observe, via KVO, your property so you don't have to worry if it was saved somewhere else and you use caching.
-
-Now usage! Given keys:
-```swift
-extension RemoteConfigKeys {
-    var userColorScheme: RemoteConfigKey<String> { .init("userColorScheme", defaultValue: "default") }
-    var userThemeName: RemoteConfigKey<String?> { .init("userThemeName") }
-    var userLastLoginDate: RemoteConfigKey<Date?> { .init("userLastLoginDate") }
-}
-```
-
-You can declare a `Settings` struct:
-```swift
-struct Settings {
-    @SwiftyRemoteConfig(keyPath: \.userColorScheme)
-    var userColorScheme: String
-
-    @SwiftyRemoteConfig(keyPath: \.userThemeName, options: .cached)
-    var userThemeName: String?
-
-    @SwiftyRemoteConfig(keyPath: \.userLastLoginDate, options: [.cached, .observed])
-    var userLastLoginDate: Date?
-}
-```
-
-## KVO
-
-KVO is supported for all the types that are `RemoteConfigSerializable`. However, if you have a custom type, it needs to have correctly defined bridges and serialization in them.
-
-To observe a value for local `RemoteConfigKey`:
-```swift
-let nameKey = RemoteConfigKey<String>("name", defaultValue: "")
-RemoteConfigs.observe(key: nameKey) { update in
-	// here you can access `oldValue`/`newValue` and few other properties
-}
-```
-
-To observe a value for a key defined in `RemoteConfigKey` extension:
-```swift
-RemoteConfigs.observe(\.nameKey) { update in
-	// here you can access `oldValue`/`newValue` and few other properties
-}
-```
-
-
-By default we are using `[.old, .new]` options for observing, but you can provide your own:
-```swift
-RemoteConfigs.observe(key: nameKey, options: [.initial, .old, .new]) { _ in }
-```
-
 ## KeyPath dynamicMemberLookup
 
 SwiftyRemoteConfig makes KeyPath dynamicMemberLookpu usable in Swift 5.1.
