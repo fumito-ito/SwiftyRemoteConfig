@@ -22,14 +22,6 @@ func then(_ description: String, closure: @escaping () -> Void) {
     it(description, closure: closure)
 }
 
-struct FrogCodable: Codable, Equatable, RemoteConfigSerializable {
-    let name: String
-    
-    init(name: String = "Froggy") {
-        self.name = name
-    }
-}
-
 final class FrogSerializable: NSObject, RemoteConfigSerializable, NSCoding {
     typealias T = FrogSerializable
     
@@ -74,7 +66,7 @@ struct FrogCustomSerializable: RemoteConfigSerializable, Equatable {
 
 final class RemoteConfigFrogBridge: RemoteConfigBridge {
     func get(key: String, remoteConfig: RemoteConfig) -> FrogCustomSerializable? {
-        guard let name = remoteConfig.configValue(forKey: key).stringValue else {
+        guard let name = remoteConfig.configValue(forKey: key).stringValue, name.isEmpty == false else {
             return nil
         }
         
@@ -82,7 +74,7 @@ final class RemoteConfigFrogBridge: RemoteConfigBridge {
     }
     
     func deserialize(_ object: RemoteConfigValue) -> FrogCustomSerializable? {
-        guard let name = object.stringValue else {
+        guard let name = object.stringValue, name.isEmpty == false else {
             return nil
         }
 
@@ -92,8 +84,10 @@ final class RemoteConfigFrogBridge: RemoteConfigBridge {
 
 final class RemoteConfigFrogArrayBridge: RemoteConfigBridge {
     func get(key: String, remoteConfig: RemoteConfig) -> [FrogCustomSerializable]? {
-        return remoteConfig.mutableArrayValue(forKey: key)
-            .compactMap({ $0 as? String })
+        return remoteConfig.configValue(forKey: key)
+            .jsonValue
+            .map({ $0 as? [String] })
+            .flatMap({ $0 })?
             .map(FrogCustomSerializable.init)
     }
     
