@@ -7,7 +7,6 @@
 
 import Foundation
 import Quick
-import SwiftyRemoteConfig
 
 #if canImport(UIKit) || canImport(AppKit)
 #if canImport(UIKit)

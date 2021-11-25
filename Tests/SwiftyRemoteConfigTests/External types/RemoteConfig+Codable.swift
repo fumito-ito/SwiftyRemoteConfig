@@ -7,7 +7,6 @@
 
 import Foundation
 import Quick
-import SwiftyRemoteConfig
 
 final class RemoteConfigCodableSpec: QuickSpec, RemoteConfigSerializableSpec {
     

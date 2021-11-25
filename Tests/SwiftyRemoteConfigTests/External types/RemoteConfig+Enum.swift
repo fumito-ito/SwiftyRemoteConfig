@@ -7,7 +7,6 @@
 
 import Foundation
 import Quick
-import SwiftyRemoteConfig
 
 final class RemoteConfigBestFroggiesEnumSerializableSpec: QuickSpec, RemoteConfigSerializableSpec {
     typealias Serializable = BestFroggiesEnum
