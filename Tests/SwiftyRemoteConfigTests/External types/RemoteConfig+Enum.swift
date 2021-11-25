@@ -9,11 +9,6 @@ import Foundation
 import Quick
 import SwiftyRemoteConfig
 
-enum BestFroggiesEnum: String, RemoteConfigSerializable {
-    case Andy
-    case Dandy
-}
-
 final class RemoteConfigBestFroggiesEnumSerializableSpec: QuickSpec, RemoteConfigSerializableSpec {
     typealias Serializable = BestFroggiesEnum
     

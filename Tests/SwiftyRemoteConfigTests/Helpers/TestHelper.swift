@@ -52,6 +52,19 @@ final class FrogSerializable: NSObject, RemoteConfigSerializable, NSCoding {
     }
 }
 
+struct FrogCodable: Codable, Equatable, RemoteConfigSerializable {
+    let name: String
+    
+    init(name: String = "Froggy") {
+        self.name = name
+    }
+}
+
+enum BestFroggiesEnum: String, RemoteConfigSerializable {
+    case Andy
+    case Dandy
+}
+
 struct FrogCustomSerializable: RemoteConfigSerializable, Equatable {
     static var _remoteConfig: RemoteConfigFrogBridge { return RemoteConfigFrogBridge() }
     static var _remoteConfigArray: RemoteConfigFrogArrayBridge { return RemoteConfigFrogArrayBridge() }
