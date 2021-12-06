@@ -6,22 +6,24 @@
 //
 
 import Foundation
-import Quick
 
-final class RemoteConfigBoolSpec: QuickSpec, RemoteConfigSerializableSpec {
-    typealias Serializable = Bool
-    
+final class RemoteConfigBoolSpec: RemoteConfigSerializableSpec<Bool> {
     var defaultValue: Bool = true
-    var keyStore = FrogKeyStore<Serializable>()
-    
-    required init() {}
-    
-    override func spec() {
-        given("Bool") {
-            self.setupFirebase()
-            self.testValues()
-            self.testOptionalValues()
-            self.testOptionalValuesWithoutDefaultValue()
-        }
+    var keyStore = FrogKeyStore<Bool>()
+
+    override class func setUp() {
+        super.setupFirebase()
+    }
+
+    func testValues() {
+        super.testValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValues() {
+        super.testOptionalValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValuesWithoutDefaultValue() {
+        super.testOptionalValuesWithoutDefaultValue(defaultValue: defaultValue, keyStore: keyStore)
     }
 }

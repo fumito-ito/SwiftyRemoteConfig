@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Quick
+@testable import SwiftyRemoteConfig
 
 #if canImport(UIKit) || canImport(AppKit)
 #if canImport(UIKit)
@@ -19,19 +19,24 @@ import Quick
 
 extension Color: RemoteConfigSerializable {}
 
-final class RemoteConfigColorSerializableSpec: QuickSpec, RemoteConfigSerializableSpec {
-    typealias Serializable = Color
-    
+final class RemoteConfigColorSerializableSpec: RemoteConfigSerializableSpec<Color> {
     var defaultValue: Color = .blue
-    var keyStore = FrogKeyStore<Serializable>()
-    
-    override func spec() {
-        given("Color") {
-            self.setupFirebase()
-            self.testValues()
-            self.testOptionalValues()
-            self.testOptionalValuesWithoutDefaultValue()
-        }
+    var keyStore = FrogKeyStore<Color>()
+
+    override class func setUp() {
+        super.setupFirebase()
+    }
+
+    func testValues() {
+        super.testValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValues() {
+        super.testOptionalValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValuesWithoutDefaultValue() {
+        super.testOptionalValuesWithoutDefaultValue(defaultValue: defaultValue, keyStore: keyStore)
     }
 }
 #endif

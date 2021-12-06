@@ -4,16 +4,13 @@
 import PackageDescription
 import class Foundation.ProcessInfo
 
-let shouldTest = true //ProcessInfo.processInfo.environment["TEST"] == "1"
+let shouldTest = ProcessInfo.processInfo.environment["TEST"] == "1"
 
 func resolveDependencies() -> [Package.Dependency] {
     let firebaseRemoteConfig: Package.Dependency = .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", .upToNextMajor(from: "8.0.0"))
-    guard shouldTest else { return [firebaseRemoteConfig] }
 
     return [
         firebaseRemoteConfig,
-        .package(url: "https://github.com/Quick/Quick.git", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/Quick/Nimble.git", .upToNextMajor(from: "8.0.0")),
     ]
 }
 
@@ -24,9 +21,10 @@ func resolveTargets() -> [Target] {
             .product(name: "FirebaseRemoteConfig", package: "Firebase")
         ],
         path: "Sources")
+
     let testTarget = Target.testTarget(
         name: "SwiftyRemoteConfigTests",
-        dependencies: ["SwiftyRemoteConfig", "Quick", "Nimble"])
+        dependencies: ["SwiftyRemoteConfig"])
 
     return shouldTest ? [baseTarget, testTarget] : [baseTarget]
 }

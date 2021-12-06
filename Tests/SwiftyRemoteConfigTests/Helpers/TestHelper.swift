@@ -6,20 +6,20 @@
 //
 
 import Foundation
-import Quick
 import SwiftyRemoteConfig
 import Firebase
+import XCTest
 
-func given(_ description: String, closure: @escaping () -> Void) {
-    describe(description, closure: closure)
+func given(_ description: String, closure: @escaping (XCTActivity) -> Void) {
+    XCTContext.runActivity(named: description, block: closure)
 }
 
-func when(_ description: String, closure: @escaping () -> Void) {
-    context(description, closure: closure)
+func when(_ description: String, closure: @escaping (XCTActivity) -> Void) {
+    XCTContext.runActivity(named: description, block: closure)
 }
 
-func then(_ description: String, closure: @escaping () -> Void) {
-    it(description, closure: closure)
+func then(_ description: String, closure: @escaping (XCTActivity) -> Void) {
+    XCTContext.runActivity(named: description, block: closure)
 }
 
 final class FrogSerializable: NSObject, RemoteConfigSerializable, NSCoding {

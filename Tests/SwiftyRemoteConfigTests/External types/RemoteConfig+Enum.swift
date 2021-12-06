@@ -6,20 +6,24 @@
 //
 
 import Foundation
-import Quick
 
-final class RemoteConfigBestFroggiesEnumSerializableSpec: QuickSpec, RemoteConfigSerializableSpec {
-    typealias Serializable = BestFroggiesEnum
+final class RemoteConfigBestFroggiesEnumSerializableSpec: RemoteConfigSerializableSpec<BestFroggiesEnum> {
+    var defaultValue: BestFroggiesEnum = .Dandy
+    var keyStore = FrogKeyStore<BestFroggiesEnum>()
     
-    var defaultValue: Serializable = .Dandy
-    var keyStore = FrogKeyStore<Serializable>()
-    
-    override func spec() {
-        given("Enum") {
-            self.setupFirebase()
-            self.testValues()
-            self.testOptionalValues()
-            self.testOptionalValuesWithoutDefaultValue()
-        }
+    override class func setUp() {
+        super.setupFirebase()
+    }
+
+    func testValues() {
+        super.testValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValues() {
+        super.testOptionalValues(defaultValue: defaultValue, keyStore: keyStore)
+    }
+
+    func testOptionalValuesWithoutDefaultValue() {
+        super.testOptionalValuesWithoutDefaultValue(defaultValue: defaultValue, keyStore: keyStore)
     }
 }
