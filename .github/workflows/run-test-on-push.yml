@@ -7,9 +7,21 @@ jobs:
 
     runs-on: macos-latest
 
+    env:
+      TEST: 1
+
     steps:
       - uses: actions/checkout@v2
+
+      - name: Create GoogleService-Info.plist from GOOGLE_SERVICE_INFO_PLIST
+        run: |
+          echo GOOGLE_SERVICE_INFO_PLIST | base64 -d >> Tests/GoogleService-Info.plist
+        shell: bash
+        env:
+          GOOGLE_SERVICE_INFO_PLIST: ${{ secrets.GOOGLE_SERVICE_INFO_PLIST }}
+
       - name: Build
         run: swift build
+
       - name: Run tests
         run: swift test

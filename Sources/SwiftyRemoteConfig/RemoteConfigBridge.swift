@@ -44,7 +44,13 @@ public struct RemoteConfigStringBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> String? {
-        return remoteConfig.configValue(forKey: key).stringValue
+        let configValue = remoteConfig.configValue(forKey: key)
+        
+        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+            return nil
+        }
+        
+        return configValue.stringValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> String? {
@@ -56,7 +62,13 @@ public struct RemoteConfigIntBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Int? {
-        return remoteConfig.configValue(forKey: key).numberValue.intValue
+        let configValue = remoteConfig.configValue(forKey: key)
+        
+        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+            return nil
+        }
+        
+        return configValue.numberValue.intValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> Int? {
@@ -68,7 +80,13 @@ public struct RemoteConfigDoubleBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Double? {
-        return remoteConfig.configValue(forKey: key).numberValue.doubleValue
+        let configValue = remoteConfig.configValue(forKey: key)
+        
+        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+            return nil
+        }
+        
+        return configValue.numberValue.doubleValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> Double? {
@@ -80,6 +98,12 @@ public struct RemoteConfigBoolBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Bool? {
+        let configValue = remoteConfig.configValue(forKey: key)
+        
+        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+            return nil
+        }
+        
         return remoteConfig.configValue(forKey: key).boolValue
     }
 
@@ -92,7 +116,8 @@ public struct RemoteConfigDataBridge: RemoteConfigBridge {
     public init() {}
 
     public func get(key: String, remoteConfig: RemoteConfig) -> Data? {
-        return remoteConfig.configValue(forKey: key).dataValue
+        let dataValue = remoteConfig.configValue(forKey: key).dataValue
+        return dataValue.isEmpty ? nil : dataValue
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> Data? {
@@ -112,7 +137,7 @@ public struct RemoteConfigUrlBridge: RemoteConfigBridge {
             return url
         }
 
-        if let stringValue = object.stringValue {
+        if let stringValue = object.stringValue, stringValue.isEmpty == false {
             if let url = URL(string: stringValue) {
                 return url
             }

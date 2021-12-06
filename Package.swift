@@ -2,6 +2,32 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
+import class Foundation.ProcessInfo
+
+let shouldTest = ProcessInfo.processInfo.environment["TEST"] == "1"
+
+func resolveDependencies() -> [Package.Dependency] {
+    let firebaseRemoteConfig: Package.Dependency = .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", .upToNextMajor(from: "8.0.0"))
+
+    return [
+        firebaseRemoteConfig,
+    ]
+}
+
+func resolveTargets() -> [Target] {
+    let baseTarget = Target.target(
+        name: "SwiftyRemoteConfig",
+        dependencies: [
+            .product(name: "FirebaseRemoteConfig", package: "Firebase")
+        ],
+        path: "Sources")
+
+    let testTarget = Target.testTarget(
+        name: "SwiftyRemoteConfigTests",
+        dependencies: ["SwiftyRemoteConfig"])
+
+    return shouldTest ? [baseTarget, testTarget] : [baseTarget]
+}
 
 let package = Package(
     name: "SwiftyRemoteConfig",
@@ -15,22 +41,6 @@ let package = Package(
             name: "SwiftyRemoteConfig",
             targets: ["SwiftyRemoteConfig"]),
     ],
-    dependencies: [
-        .package(
-            name: "Firebase",
-            url: "https://github.com/firebase/firebase-ios-sdk.git",
-            .upToNextMajor(from: "8.0.0")),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-        .target(
-            name: "SwiftyRemoteConfig",
-            dependencies: [
-                .product(name: "FirebaseRemoteConfig", package: "Firebase")
-            ]),
-        .testTarget(
-            name: "SwiftyRemoteConfigTests",
-            dependencies: ["SwiftyRemoteConfig"]),
-    ]
+    dependencies: resolveDependencies(),
+    targets: resolveTargets()
 )
