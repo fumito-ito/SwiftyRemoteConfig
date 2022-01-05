@@ -160,13 +160,41 @@ public struct RemoteConfigCodableBridge<T: Codable>: RemoteConfigBridge {
     }
 }
 
-public struct RemoteConfigKeyedArchiverBridge<T>: RemoteConfigBridge {
+public struct RemoteConfigKeyedArchiverBridge<T: NSCoding>: RemoteConfigBridge {
     public func get(key: String, remoteConfig: RemoteConfig) -> T? {
         return self.deserialize(remoteConfig.configValue(forKey: key))
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> T? {
-        return NSKeyedUnarchiver.unarchiveObject(with: object.dataValue) as? T
+        guard #available(macOS 10.13, *) else {
+            return NSKeyedUnarchiver.unarchiveObject(with: object.dataValue) as? T
+        }
+
+        guard let object = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [T.self], from: object.dataValue) as? T else {
+            return nil
+        }
+
+        return object
+    }
+}
+
+public struct RemoteConfigKeyedArchiverArrayBridge<T: Collection>: RemoteConfigBridge where T.Element: NSCoding {
+    public func get(key: String, remoteConfig: RemoteConfig) -> T? {
+        return self.deserialize(remoteConfig.configValue(forKey: key))
+    }
+
+    public func deserialize(_ object: RemoteConfigValue) -> T? {
+        guard #available(macOS 10.13, *) else {
+            return NSKeyedUnarchiver.unarchiveObject(with: object.dataValue) as? T
+        }
+
+        guard let objects = object.jsonValue as? [Data] else {
+            return nil
+        }
+
+        return objects.compactMap({
+            try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [T.Element.self], from: $0) as? T.Element
+        }) as? T
     }
 }
 
