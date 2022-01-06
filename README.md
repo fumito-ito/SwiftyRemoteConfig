@@ -232,6 +232,31 @@ extension Data: RemoteConfigSerializable {
 ```
 Also, take a look at our source code or tests to see more examples of bridges. If you find yourself confused with all these bridges, please create an issue and we will figure something out.
 
+## Property Wrappers
+
+SwiftyRemoteConfig provides property wrappers for Swift 5.1! The property wrapper, `@SwiftyRemoteConfig`, provides an option to use it with key path.
+
+_Note: This propety wrappers only `read` support. You can set new value to the property, but any changes will be reflected to remote config value_ 
+
+### usage
+
+Given keys:
+
+```swift
+extension RemoteConfigKeys {
+    var userColorScheme: RemoteConfigKey<String> { .init("userColorScheme", defaultValue: "default") }
+}
+```
+
+You can declare a Settings struct:
+
+```swift
+struct Settings {
+    @SwiftyRemoteConfig(keyPath: \.userColorScheme)
+    var userColorScheme: String
+}
+```
+
 ## KeyPath dynamicMemberLookup
 
 SwiftyRemoteConfig makes KeyPath dynamicMemberLookpu usable in Swift 5.1.
