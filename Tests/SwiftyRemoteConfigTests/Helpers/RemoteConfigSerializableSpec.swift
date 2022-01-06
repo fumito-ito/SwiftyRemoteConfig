@@ -127,13 +127,13 @@ extension RemoteConfigSerializableSpec where Serializable.T: Equatable, Serializ
                 then("create a key") { _ in
                     let key = RemoteConfigKey<Serializable?>("test")
                     XCTAssert(key._key == "test")
-                    XCTAssertNil(key.defaultValue)
+                    XCTAssert(key.defaultValue == nil)
                 }
 
                 then("create an array key") { _ in
                     let key = RemoteConfigKey<[Serializable]?>("test")
                     XCTAssert(key._key == "test")
-                    XCTAssertNil(key.defaultValue)
+                    XCTAssert(key.defaultValue == nil)
                 }
 
                 then("compare optional value to non-optional value") { _ in
