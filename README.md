@@ -293,11 +293,13 @@ let themaColor: UIColor = RemoteConfig.themaColor
 ### SDKs
 
 - **iOS** version >= 11.0
+- **macOS** version >= 10.12
+- **tvOS** version >= 12.0
+- **watchOS** version >= 6.0
 
 ### Frameworks
 
 - **Firebase iOS SDK** >= 8.0.0
-- **StoreKit**
 
 ## Installation
 
@@ -306,7 +308,7 @@ let themaColor: UIColor = RemoteConfig.themaColor
 If you're using Cocoapods, just add this line to your `Podfile`:
 
 ```ruby
-pod 'SwiftyRemoteConfig`, `~> 0.0.2`
+pod 'SwiftyRemoteConfig`, `~> 0.0.5`
 ```
 
 Install by running this command in your terminal:
@@ -326,7 +328,7 @@ import SwiftyRemoteConfig
 Just add your Cartfile
 
 ```
-github "fumito-ito/SwiftyRemoteConfig" ~> 0.0.2
+github "fumito-ito/SwiftyRemoteConfig" ~> 0.0.5
 ```
 
 ### Swift Package Manager
@@ -338,7 +340,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "0.0.2"))
+        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "0.0.5"))
     ]
 )
 ```
