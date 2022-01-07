@@ -244,7 +244,7 @@ Also, take a look at our source code or tests to see more examples of bridges. I
 
 SwiftyRemoteConfig provides property wrappers for Swift 5.1! The property wrapper, `@SwiftyRemoteConfig`, provides an option to use it with key path.
 
-_Note: This propety wrappers only `read` support. You can set new value to the property, but any changes will be reflected to remote config value_ 
+_Note: This propety wrappers only `read` support. You can set new value to the property, but any changes will NOT be reflected to remote config value_ 
 
 ### usage
 
