@@ -1,5 +1,13 @@
 # SwiftyRemoteConfig
 
+![Platforms](https://img.shields.io/badge/platforms-ios%20%7C%20osx%20%7C%20watchos%20%7C%20tvos-lightgrey.svg)
+![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
+![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)
+![Swift version](https://img.shields.io/badge/swift-5.0-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-5.1-orange.svg)
+![Swift version](https://img.shields.io/badge/swift-5.2-orange.svg)
+
 **Modern Swift API for `FirebaseRemoteConfig`**
 
 SwiftyRemoteConfig makes Firebase Remote Config enjoyable to use by combining expressive Swifty API with the benefits fo static typing. This library is strongly inspired by [SwiftyUserDefaults](https://github.com/sunshinejr/SwiftyUserDefaults).
@@ -116,7 +124,7 @@ let userSections = RemoteConfigKey<[UserSection]?>("userSections")
 Support your custom NSCoding type the same way as with Codable support:
 
 ```swift
-final class UserSection: NSObject, NSCoding, RemoteCOnfigSerializable {
+final class UserSection: NSObject, NSCoding, RemoteConfigSerializable {
     ...
 }
 ```
