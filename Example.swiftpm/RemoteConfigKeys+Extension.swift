@@ -1,9 +1,8 @@
 //
-//  RemoteConfigKeys+Extensions.swift
-//  SwiftyRemoteConfigExample
+//  RemoteConfigKeys+Extension.swift
+//  Example
 //
-//  Created by 伊藤史 on 2020/08/26.
-//  Copyright © 2020 Fumito Ito. All rights reserved.
+//  Created by Fumito Ito on 2022/02/23.
 //
 
 import Foundation
