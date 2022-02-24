@@ -6,8 +6,8 @@
 //
 
 import Foundation
+import FirebaseRemoteConfig
 
-#if os(Linux)
 public extension RemoteConfigAdapter {
     func observe<T: RemoteConfigSerializable>(_ key: RemoteConfigKey<T>,
                                               options: NSKeyValueObservingOptions = [.new, .old],
@@ -29,4 +29,3 @@ public extension RemoteConfig {
         return RemoteConfigObserver(key: key, remoteConfig: self, options: options, handler: handler)
     }
 }
-#endif

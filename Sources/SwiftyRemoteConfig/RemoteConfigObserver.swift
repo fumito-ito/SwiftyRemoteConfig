@@ -12,7 +12,6 @@ public protocol RemoteConfigDisposable {
     func dispose()
 }
 
-#if !os(Linux)
 public final class RemoteConfigObserver<T: RemoteConfigSerializable>: NSObject, RemoteConfigDisposable where T == T.T {
     public struct Update {
         public let kind: NSKeyValueChange
@@ -101,4 +100,3 @@ public final class RemoteConfigObserver<T: RemoteConfigSerializable>: NSObject, 
         remoteConfig.removeObserver(self, forKeyPath: observeKeyPathName, context: nil)
     }
 }
-#endif
