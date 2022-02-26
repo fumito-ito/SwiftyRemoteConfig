@@ -343,7 +343,7 @@ final class ViewModel: ObservableObject {
 If you're using Cocoapods, just add this line to your `Podfile`:
 
 ```ruby
-pod 'SwiftyRemoteConfig`, `~> 0.20`
+pod 'SwiftyRemoteConfig`, `~> 0.2.1`
 ```
 
 Install by running this command in your terminal:
@@ -363,7 +363,7 @@ import SwiftyRemoteConfig
 Just add your Cartfile
 
 ```
-github "fumito-ito/SwiftyRemoteConfig" ~> 0.20
+github "fumito-ito/SwiftyRemoteConfig" ~> 0.2.1
 ```
 
 ### Swift Package Manager
@@ -375,7 +375,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "0.20"))
+        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "0.2.1"))
     ]
 )
 ```
