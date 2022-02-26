@@ -9,14 +9,14 @@ import Foundation
 import Combine
 import FirebaseRemoteConfig
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public extension RemoteConfig {
     var combine: RemoteConfigCombine {
         return RemoteConfigCombine(self)
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public class RemoteConfigCombine {
     private let remoteConfig: RemoteConfig
 
@@ -25,7 +25,7 @@ public class RemoteConfigCombine {
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 extension RemoteConfigCombine {
     class Subscription<S: Subscriber> {
         private(set) var subscriber: S?
@@ -94,7 +94,7 @@ extension RemoteConfigCombine {
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public extension RemoteConfigCombine {
     func fetchedPublisher() -> AnyPublisher<Void, Never> {
         return remoteConfig.publisher(for: \.lastFetchTime)
