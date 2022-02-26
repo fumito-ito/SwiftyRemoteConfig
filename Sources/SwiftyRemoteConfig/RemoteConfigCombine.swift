@@ -11,11 +11,15 @@ import FirebaseRemoteConfig
 
 @available(iOS 13.0, macOS 10.15, *)
 public extension RemoteConfig {
+    /// An Combine accessor for RemoteConfig
     var combine: RemoteConfigCombine {
         return RemoteConfigCombine(self)
     }
 }
 
+/// An extension class with Combine.
+///
+/// It allows you handle RemoteConfig with Combine
 @available(iOS 13.0, macOS 10.15, *)
 public class RemoteConfigCombine {
     private let remoteConfig: RemoteConfig
@@ -96,16 +100,28 @@ extension RemoteConfigCombine {
 
 @available(iOS 13.0, macOS 10.15, *)
 public extension RemoteConfigCombine {
+    /// Returns Publisher that tells you that RemoteConfig has fetched latest valeus from Backend.
+    ///
+    /// - Returns: A publisher `<Void, Never>`
     func fetchedPublisher() -> AnyPublisher<Void, Never> {
         return remoteConfig.publisher(for: \.lastFetchTime)
             .map({ _ in Void() })
             .eraseToAnyPublisher()
     }
 
+    /// Returns Publisher that gives you a value matched a config key after fetching from RemoteConfig.
+    ///
+    /// - Parameters: keyPath: A keyPath for RemoteConfig key
+    /// - Returns: A publisher `<T.T, Never>`
     func fetchedPublisher<T: RemoteConfigSerializable>(for keyPath: KeyPath<RemoteConfigKeys, RemoteConfigKey<T>>) -> AnyPublisher<T.T, Never> where T.T == T {
         return RemoteConfigValuePublisher(remoteConfig: remoteConfig, key: RemoteConfigs.keyStore[keyPath: keyPath]).eraseToAnyPublisher()
     }
 
+    /// Returns Publisher that gives you a value matched a config key after fetching from RemoteConfig.
+    ///
+    /// - Parameters keyPath: A keyPath for RemoteConfig key
+    /// - Parameters adapter: A RemoteConfig key adapeter for RemoteConfig keys
+    /// - Returns: A publisher `<T.T, Never>`
     func fetchedPublisher<KeyStore, T: RemoteConfigSerializable>(for keyPath: KeyPath<KeyStore, RemoteConfigKey<T>>,
                                                                  adapter: RemoteConfigAdapter<KeyStore>) -> AnyPublisher<T.T, Never> where T.T == T {
         return RemoteConfigValuePublisher(remoteConfig: remoteConfig, key: adapter.keyStore[keyPath: keyPath]).eraseToAnyPublisher()
