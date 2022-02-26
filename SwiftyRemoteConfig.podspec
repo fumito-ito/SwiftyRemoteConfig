@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftyRemoteConfig"
-  spec.version      = "0.20"
+  spec.version      = "0.2.1"
   spec.summary      = "Modern Swift API for FirebaseRemoteConfig"
 
   spec.description  = <<-DESC
