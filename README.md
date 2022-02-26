@@ -286,6 +286,41 @@ let recommendedVersion = RemoteConfig.recommendedAppVersion
 let themaColor: UIColor = RemoteConfig.themaColor
 ```
 
+## Combine
+
+SwiftyRemoteConfig provides values from RemoteConfig with Combine's stream.
+
+```swift
+extension RemoteConfigKeys {
+    var contentText: RemoteConfigKey<String> { .init("content_text", defaultValue: "Hello, World!!") }
+}
+```
+
+and get a RemoteConfig's value from Combine stream !
+
+```swift
+import FirebaseRemoteConfig
+import SwiftyRemoteConfig
+import Combine
+
+final class ViewModel: ObservableObject {
+    @Published var contentText: String
+
+    private var cancellables: Set<AnyCancellable> = []
+
+    init() {
+        contentText = RemoteConfigs.contentText
+
+        RemoteConfig.remoteConfig()
+            .combine
+            .fetchedPublisher(for: \.contentText)
+            .receive(on: RunLoop.main)
+            .assign(to: \.contentText, on: self)
+            .store(in: &cancellables)
+    }
+}
+```
+
 ## Dependencies
 
 - **Swift** version >= 5.0

@@ -1,14 +1,15 @@
 import SwiftUI
-import Firebase
-import SwiftyRemoteConfig
+import Combine
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ViewModel()
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(RemoteConfigs.contentText)
+            Text(viewModel.contentText)
         }
     }
 }
