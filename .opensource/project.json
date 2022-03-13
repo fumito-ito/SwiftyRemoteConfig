@@ -1,0 +1,8 @@
+{
+    "name": "SwiftyRemoteConfig",
+    "type": "library",
+    "platforms": ["iOS"],
+    "content": "README.md",
+    "pages": [],
+    "related": []
+  }
