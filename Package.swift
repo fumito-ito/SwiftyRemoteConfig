@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.6
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -20,16 +20,15 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            name: "Firebase",
             url: "https://github.com/firebase/firebase-ios-sdk.git",
-            .upToNextMajor(from: "8.12.1")
+            .upToNextMajor(from: "9.0.0")
         ),
     ],
     targets: [
         .target(
             name: "SwiftyRemoteConfig",
             dependencies: [
-                .product(name: "FirebaseRemoteConfig", package: "Firebase")
+                .product(name: "FirebaseRemoteConfig", package: "firebase-ios-sdk")
             ],
             path: "Sources"
         ),

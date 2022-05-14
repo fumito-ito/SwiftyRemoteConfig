@@ -154,6 +154,8 @@ public struct RemoteConfigCodableBridge<T: Codable>: RemoteConfigBridge {
     public func deserialize(_ object: RemoteConfigValue) -> T? {
         return try? JSONDecoder().decode(T.self, from: object.dataValue)
     }
+
+    public init() {}
 }
 
 public struct RemoteConfigKeyedArchiverBridge<T: NSCoding>: RemoteConfigBridge {
@@ -172,6 +174,8 @@ public struct RemoteConfigKeyedArchiverBridge<T: NSCoding>: RemoteConfigBridge {
 
         return object
     }
+
+    public init() {}
 }
 
 public struct RemoteConfigKeyedArchiverArrayBridge<T: Collection>: RemoteConfigBridge where T.Element: NSCoding {
@@ -192,6 +196,8 @@ public struct RemoteConfigKeyedArchiverArrayBridge<T: Collection>: RemoteConfigB
             try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [T.Element.self], from: $0) as? T.Element
         }) as? T
     }
+
+    public init() {}
 }
 
 public struct RemoteConfigRawRepresentableBridge<T: RawRepresentable>: RemoteConfigBridge {
@@ -210,6 +216,8 @@ public struct RemoteConfigRawRepresentableBridge<T: RawRepresentable>: RemoteCon
 
         return nil
     }
+
+    public init() {}
 }
 
 public struct RemoteConfigRawRepresentableArrayBridge<T: Collection>: RemoteConfigBridge where T.Element: RawRepresentable {
@@ -224,6 +232,8 @@ public struct RemoteConfigRawRepresentableArrayBridge<T: Collection>: RemoteConf
 
         return rawValues.compactMap({ T.Element(rawValue: $0) }) as? T
     }
+
+    public init() {}
 }
 
 public struct RemoteConfigOptionalBridge<Bridge: RemoteConfigBridge>: RemoteConfigBridge {
