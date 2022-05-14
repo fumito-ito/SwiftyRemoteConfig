@@ -12,7 +12,96 @@
 
 SwiftyRemoteConfig makes Firebase Remote Config enjoyable to use by combining expressive Swifty API with the benefits fo static typing. This library is strongly inspired by [SwiftyUserDefaults](https://github.com/sunshinejr/SwiftyUserDefaults).
 
-## Features 
+## HEADS UP ! You need workaround to use with Xcode 13.3 or later
+
+Because of [Xcode compiler bug](https://github.com/apple/swift/issues/58084), you need workaround to use this library with Xcode 13.3 or later.
+Followings are recommended steps for workaround.
+
+1. Create `SwiftyRemoteConfig+Workaround.swift` file in module whitch is using `SwiftyRemoteConfig`.
+1. Copy the codes below into `SwiftyRemoteConfig+Workaround.swift`. This is pretty much a copy from the `BuiltIns.swift` file in the Sources folder: https://raw.githubusercontent.com/fumito-ito/SwiftyRemoteConfig/master/Sources/SwiftyRemoteConfig/BuiltIns.swift
+
+```swift
+import Foundation
+import SwiftyRemoteConfig
+
+extension RemoteConfigSerializable {
+    public static var _remoteConfigArray: RemoteConfigArrayBridge<[T]> { RemoteConfigArrayBridge() }
+}
+
+extension Date: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigObjectBridge<Date> { RemoteConfigObjectBridge() }
+}
+
+extension String: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigStringBridge { RemoteConfigStringBridge() }
+}
+
+extension Int: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigIntBridge { RemoteConfigIntBridge() }
+}
+
+extension Double: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigDoubleBridge { return RemoteConfigDoubleBridge() }
+}
+
+extension Bool: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigBoolBridge { RemoteConfigBoolBridge() }
+}
+
+extension Data: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigDataBridge { RemoteConfigDataBridge() }
+}
+
+extension URL: RemoteConfigSerializable {
+    public static var _remoteConfig: RemoteConfigUrlBridge { RemoteConfigUrlBridge() }
+    public static var _remoteConfigArray: RemoteConfigCodableBridge<[URL]> { RemoteConfigCodableBridge() }
+}
+
+extension RemoteConfigSerializable where Self: Codable {
+    public static var _remoteConfig: RemoteConfigCodableBridge<Self> { RemoteConfigCodableBridge() }
+    public static var _remoteConfigArray: RemoteConfigCodableBridge<[Self]> { RemoteConfigCodableBridge() }
+}
+
+extension RemoteConfigSerializable where Self: RawRepresentable {
+    public static var _remoteConfig: RemoteConfigRawRepresentableBridge<Self> { RemoteConfigRawRepresentableBridge() }
+    public static var _remoteConfigArray: RemoteConfigRawRepresentableArrayBridge<[Self]> { RemoteConfigRawRepresentableArrayBridge() }
+}
+
+extension RemoteConfigSerializable where Self: NSCoding {
+    public static var _remoteConfig: RemoteConfigKeyedArchiverBridge<Self> { RemoteConfigKeyedArchiverBridge() }
+    public static var _remoteConfigArray: RemoteConfigKeyedArchiverArrayBridge<[Self]> { RemoteConfigKeyedArchiverArrayBridge() }
+}
+
+extension Dictionary: RemoteConfigSerializable where Key == String {
+    public typealias T = [Key: Value]
+    public typealias Bridge = RemoteConfigObjectBridge<T>
+    public typealias ArrayBridge = RemoteConfigArrayBridge<[T]>
+
+    public static var _remoteConfig: Bridge { Bridge() }
+    public static var _remoteConfigArray: ArrayBridge { ArrayBridge() }
+}
+
+extension Array: RemoteConfigSerializable where Element: RemoteConfigSerializable {
+    public typealias T = [Element.T]
+    public typealias Bridge = Element.ArrayBridge
+    public typealias ArrayBridge = RemoteConfigObjectBridge<[T]>
+
+    public static var _remoteConfig: Bridge { Element._remoteConfigArray }
+    public static var _remoteConfigArray: ArrayBridge {
+        fatalError("Multidimensional arrays are not supported yet")
+    }
+}
+
+extension Optional: RemoteConfigSerializable where Wrapped: RemoteConfigSerializable {
+    public typealias Bridge = RemoteConfigOptionalBridge<Wrapped.Bridge>
+    public typealias ArrayBridge = RemoteConfigOptionalBridge<Wrapped.ArrayBridge>
+
+    public static var _remoteConfig: Bridge { RemoteConfigOptionalBridge(bridge: Wrapped._remoteConfig) }
+    public static var _remoteConfigArray: ArrayBridge { RemoteConfigOptionalBridge(bridge: Wrapped._remoteConfigArray) }
+}
+```
+
+## Features
 
 There is only one step to start using SwiftyRemoteConfig.
 
