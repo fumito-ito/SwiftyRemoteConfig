@@ -354,6 +354,21 @@ struct Settings {
 }
 ```
 
+You can also check property details with projected value:
+
+```swift
+struct Settings {
+    @SwiftyRemoteConfig(keyPath: \.userColorScheme)
+    var userColorScheme: String
+    
+    var isFetchedOnce: Bool {
+        // you can also use `_userColorScheme.lastFetchStatus`
+        return _userColorScheme.lastFetchTime != nil
+    }
+}
+}
+``` 
+
 ## KeyPath dynamicMemberLookup
 
 SwiftyRemoteConfig makes KeyPath dynamicMemberLookpu usable in Swift 5.1.
