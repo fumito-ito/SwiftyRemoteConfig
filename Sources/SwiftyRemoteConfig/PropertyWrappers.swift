@@ -22,8 +22,33 @@ public struct SwiftyRemoteConfigOptions: OptionSet {
 @propertyWrapper
 public final class SwiftyRemoteConfig<T: RemoteConfigSerializable> where T.T == T {
 
+    private let config: RemoteConfig
+
+    /// `RemoteConfigKey` for this value
     public let key: RemoteConfigKey<T>
+
+    /// `SwiftyRemoteConfigOptions` for this value
     public let options: SwiftyRemoteConfigOptions
+
+    /// Last fetch status. The status can be any enumerated value from `RemoteConfigFetchStatus`.
+    public var lastFetchStatus: RemoteConfigFetchStatus {
+        return self.config.lastFetchStatus
+    }
+
+    /// Last successful fetch completion time.
+    public var lastFetchTime: Date? {
+        return self.config.lastFetchTime
+    }
+
+    public var projectedValue: T {
+        get {
+            return self.wrappedValue
+        }
+        @available(*, unavailable, message: "SwiftyRemoteConfig property wrapper does not support setting values yet.")
+        set {
+            fatalError("SwiftyRemoteConfig property wrapper does not support setting values yet.")
+        }
+    }
 
     public var wrappedValue: T {
         get {
@@ -47,6 +72,7 @@ public final class SwiftyRemoteConfig<T: RemoteConfigSerializable> where T.T == 
         adapter: RemoteConfigAdapter<KeyStore>,
         options: SwiftyRemoteConfigOptions = []
     ) {
+        self.config = adapter.remoteConfig
         self.key = adapter.keyStore[keyPath: keyPath]
         self.options = options
 
@@ -61,6 +87,7 @@ public final class SwiftyRemoteConfig<T: RemoteConfigSerializable> where T.T == 
         keyPath: KeyPath<RemoteConfigKeys, RemoteConfigKey<T>>,
         options: SwiftyRemoteConfigOptions = []
     ) {
+        self.config = RemoteConfigs.remoteConfig
         self.key = RemoteConfigs.keyStore[keyPath: keyPath]
         self.options = options
 
