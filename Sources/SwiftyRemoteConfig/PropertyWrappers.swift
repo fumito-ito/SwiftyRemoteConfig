@@ -33,6 +33,7 @@ public final class SwiftyRemoteConfig<T: RemoteConfigSerializable> where T.T == 
                 return RemoteConfigs[self.key]
             }
         }
+        @available(*, unavailable, message: "SwiftyRemoteConfig's property wrapper does not support setting values yet.")
         set {
             fatalError("SwiftyRemoteConfig property wrapper does not support setting values yet.")
         }
