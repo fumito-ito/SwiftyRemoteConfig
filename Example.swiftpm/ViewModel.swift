@@ -12,6 +12,9 @@ import Combine
 final class ViewModel: ObservableObject {
     @Published var contentText: String
 
+    @SwiftyRemoteConfig(keyPath: \.contentText)
+    var fuga: String
+
     private var cancellables: Set<AnyCancellable> = []
 
     init() {
@@ -23,5 +26,13 @@ final class ViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.contentText, on: self)
             .store(in: &cancellables)
+    }
+}
+
+final class Foo {
+    init() {
+        let viewModel = ViewModel()
+
+        let foo = viewModel.$fuga.lastFetchTime
     }
 }

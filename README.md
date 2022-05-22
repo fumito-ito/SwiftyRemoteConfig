@@ -358,14 +358,18 @@ You can also check property details with projected value:
 
 ```swift
 struct Settings {
-    @SwiftyRemoteConfig(keyPath: \.userColorScheme)
-    var userColorScheme: String
-    
-    var isFetchedOnce: Bool {
-        // you can also use `_userColorScheme.lastFetchStatus`
-        return _userColorScheme.lastFetchTime != nil
-    }
+    @SwiftyRemoteConfig(keyPath: \.newFeatureAvailable)
+    var newFeatureAvailable: String
 }
+
+struct NewFeatureRouter {
+    func show(with settings: Settings) {
+        if settings.$newFeatureAvailable.lastFetchTime != nil {
+            // show new feature
+        } else {
+            // fetch and activate remote config before routing
+        }
+    }
 }
 ``` 
 

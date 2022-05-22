@@ -40,13 +40,13 @@ public final class SwiftyRemoteConfig<T: RemoteConfigSerializable> where T.T == 
         return self.config.lastFetchTime
     }
 
-    public var projectedValue: T {
+    public var projectedValue: SwiftyRemoteConfig<T> {
         get {
-            return self.wrappedValue
+            return self
         }
-        @available(*, unavailable, message: "SwiftyRemoteConfig property wrapper does not support setting values yet.")
+        @available(*, unavailable, message: "SwiftyRemoteConfig's projected value does not support setting values yet.")
         set {
-            fatalError("SwiftyRemoteConfig property wrapper does not support setting values yet.")
+            fatalError("SwiftyRemoteConfig's projected value does not support setting values yet.")
         }
     }
 
