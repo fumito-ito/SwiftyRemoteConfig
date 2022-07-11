@@ -17,7 +17,7 @@ SwiftyRemoteConfig makes Firebase Remote Config enjoyable to use by combining ex
 Because of [Xcode compiler bug](https://github.com/apple/swift/issues/58084), you need workaround to use this library with Xcode 13.3 or later.
 Followings are recommended steps for workaround.
 
-1. Create `SwiftyRemoteConfig+Workaround.swift` file in module whitch is using `SwiftyRemoteConfig`.
+1. Create `SwiftyRemoteConfig+Workaround.swift` file in module which is using `SwiftyRemoteConfig`.
 1. Copy the codes below into `SwiftyRemoteConfig+Workaround.swift`. This is pretty much a copy from the `BuiltIns.swift` file in the Sources folder: https://raw.githubusercontent.com/fumito-ito/SwiftyRemoteConfig/master/Sources/SwiftyRemoteConfig/BuiltIns.swift
 
 ```swift
@@ -148,7 +148,7 @@ You can now use `RemoteConfig` shortcut to access those values:
 RemoteConfigs[key: flag] // => false, type as "Bool"
 ```
 
-THe compiler won't let you fetching conveniently returns `Bool`. 
+The compiler won't let you fetching conveniently returns `Bool`. 
 
 ### Take shortcuts
 
@@ -231,7 +231,7 @@ enum UserSection: String, RemoteConfigSerializable {
 
 ### Custom types
 
-If you want to add your own custom type that we don't support yet. we've got you covered. We use `RemoteConfigBridge` s of many kinds to specify how you get values and arrays of values. WHen you look at `RemoteConfigSerializable` protocol, it expects two properties in eacy type: `_remoteConfig` and `_remoteConfigArray`, where both are of type `RemoteConfigBridge`.
+If you want to add your own custom type that we don't support yet, we've got you covered. We use `RemoteConfigBridge` s of many kinds to specify how you get values and arrays of values. When you look at `RemoteConfigSerializable` protocol, it expects two properties in each type: `_remoteConfig` and `_remoteConfigArray`, where both are of type `RemoteConfigBridge`.
 
 For instance, this is a bridge for single value data retrieving using `NSKeyedUnarchiver`:
 
@@ -239,7 +239,7 @@ For instance, this is a bridge for single value data retrieving using `NSKeyedUn
 public struct RemoteConfigKeyedArchiveBridge<T>: RemoteConfigBridge {
 
     public func get(key: String, remoteConfig: RemoteConfig) -> T? {
-        remoteConfig.data(forKey: key).flatMap(NSKyedUnarchiver.unarchiveObject) as? T
+        remoteConfig.data(forKey: key).flatMap(NSKeyedUnarchiver.unarchiveObject) as? T
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> T? {
@@ -247,7 +247,7 @@ public struct RemoteConfigKeyedArchiveBridge<T>: RemoteConfigBridge {
             return nil
         }
 
-        NSKyedUnarchiver.unarchiveObject(with: data)
+        NSKeyedUnarchiver.unarchiveObject(with: data)
     }
 }
 ```
@@ -286,7 +286,7 @@ final class RemoteConfigCustomBridge: RemoteConfigBridge {
         return value.map(RemoteConfigCustomSerializable.init)
     }
 
-    func deserializa(_ object: Any) -> RemoteConfigCustomSerializable? {
+    func deserialize(_ object: Any) -> RemoteConfigCustomSerializable? {
         guard let value = object as? String {
             return nil
         }
@@ -302,7 +302,7 @@ final class RemoteConfigCustomArrayBridge: RemoteConfigBridge {
             .map(RemoteConfigCustomSerializable.init)
     }
 
-    func deserializa(_ object: Any) -> [RemoteConfigCustomSerializable]? {
+    func deserialize(_ object: Any) -> [RemoteConfigCustomSerializable]? {
         guard let values as? [String] else {
             return nil
         }
@@ -333,7 +333,7 @@ Also, take a look at our source code or tests to see more examples of bridges. I
 
 SwiftyRemoteConfig provides property wrappers for Swift 5.1! The property wrapper, `@SwiftyRemoteConfig`, provides an option to use it with key path.
 
-_Note: This propety wrappers only `read` support. You can set new value to the property, but any changes will NOT be reflected to remote config value_ 
+_Note: This property wrappers only `read` support. You can set new value to the property, but any changes will NOT be reflected to remote config value_ 
 
 ### usage
 
@@ -375,7 +375,7 @@ struct NewFeatureRouter {
 
 ## KeyPath dynamicMemberLookup
 
-SwiftyRemoteConfig makes KeyPath dynamicMemberLookpu usable in Swift 5.1.
+SwiftyRemoteConfig makes KeyPath dynamicMemberLookup usable in Swift 5.1.
 
 ```swift
 extension RemoteConfigKeys {
