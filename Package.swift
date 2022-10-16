@@ -7,7 +7,7 @@ let package = Package(
     name: "SwiftyRemoteConfig",
     platforms: [
         .iOS(.v11),
-        .macOS(.v10_12),
+        .macOS(.v10_13),
         .tvOS(.v12),
         .watchOS(.v6),
     ],

@@ -442,7 +442,7 @@ final class ViewModel: ObservableObject {
 
 ### Frameworks
 
-- **Firebase iOS SDK** >= 9.0.0
+- **Firebase iOS SDK** >= 10.0.0
 
 ## Installation
 
@@ -451,7 +451,7 @@ final class ViewModel: ObservableObject {
 If you're using Cocoapods, just add this line to your `Podfile`:
 
 ```ruby
-pod 'SwiftyRemoteConfig`, `~> 0.4.0`
+pod 'SwiftyRemoteConfig`, `~> 1.0.0`
 ```
 
 Install by running this command in your terminal:
@@ -471,7 +471,7 @@ import SwiftyRemoteConfig
 Just add your Cartfile
 
 ```
-github "fumito-ito/SwiftyRemoteConfig" ~> 0.4.0
+github "fumito-ito/SwiftyRemoteConfig" ~> 1.0.0
 ```
 
 ### Swift Package Manager
@@ -483,7 +483,7 @@ let package = Package(
     name: "MyPackage",
     products: [...],
     dependencies: [
-        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "0.4.0"))
+        .package(url: "https://github.com/fumito-ito/SwiftyRemoteConfig.git", .upToNextMajor(from: "1.0.0"))
     ]
 )
 ```
