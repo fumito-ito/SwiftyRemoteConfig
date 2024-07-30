@@ -46,7 +46,7 @@ public struct RemoteConfigStringBridge: RemoteConfigBridge {
     public func get(key: String, remoteConfig: RemoteConfig) -> String? {
         let configValue = remoteConfig.configValue(forKey: key)
         
-        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+        if configValue.stringValue.isEmpty == true {
             return nil
         }
         
@@ -64,7 +64,7 @@ public struct RemoteConfigIntBridge: RemoteConfigBridge {
     public func get(key: String, remoteConfig: RemoteConfig) -> Int? {
         let configValue = remoteConfig.configValue(forKey: key)
         
-        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+        if configValue.stringValue.isEmpty == true {
             return nil
         }
         
@@ -82,7 +82,7 @@ public struct RemoteConfigDoubleBridge: RemoteConfigBridge {
     public func get(key: String, remoteConfig: RemoteConfig) -> Double? {
         let configValue = remoteConfig.configValue(forKey: key)
         
-        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+        if configValue.stringValue.isEmpty == true {
             return nil
         }
         
@@ -100,7 +100,7 @@ public struct RemoteConfigBoolBridge: RemoteConfigBridge {
     public func get(key: String, remoteConfig: RemoteConfig) -> Bool? {
         let configValue = remoteConfig.configValue(forKey: key)
         
-        if configValue.stringValue?.isEmpty == true || configValue.stringValue.isNil {
+        if configValue.stringValue.isEmpty == true {
             return nil
         }
         
@@ -133,12 +133,12 @@ public struct RemoteConfigUrlBridge: RemoteConfigBridge {
     }
 
     public func deserialize(_ object: RemoteConfigValue) -> URL? {
-        if let stringValue = object.stringValue, stringValue.isEmpty == false {
-            if let url = URL(string: stringValue) {
+        if object.stringValue.isEmpty == false {
+            if let url = URL(string: object.stringValue) {
                 return url
             }
 
-            let path = (stringValue as NSString).expandingTildeInPath
+            let path = (object.stringValue as NSString).expandingTildeInPath
             return URL(fileURLWithPath: path)
         }
 

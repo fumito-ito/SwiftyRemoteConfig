@@ -79,7 +79,8 @@ struct FrogCustomSerializable: RemoteConfigSerializable, Equatable {
 
 final class RemoteConfigFrogBridge: RemoteConfigBridge {
     func get(key: String, remoteConfig: RemoteConfig) -> FrogCustomSerializable? {
-        guard let name = remoteConfig.configValue(forKey: key).stringValue, name.isEmpty == false else {
+        let name = remoteConfig.configValue(forKey: key).stringValue
+        guard name.isEmpty == false else {
             return nil
         }
         
@@ -87,11 +88,11 @@ final class RemoteConfigFrogBridge: RemoteConfigBridge {
     }
     
     func deserialize(_ object: RemoteConfigValue) -> FrogCustomSerializable? {
-        guard let name = object.stringValue, name.isEmpty == false else {
+        guard object.stringValue.isEmpty == false else {
             return nil
         }
 
-        return FrogCustomSerializable.init(name: name)
+        return FrogCustomSerializable.init(name: object.stringValue)
     }
 }
 
