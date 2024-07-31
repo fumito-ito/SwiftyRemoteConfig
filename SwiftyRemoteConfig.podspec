@@ -12,16 +12,16 @@ Pod::Spec.new do |spec|
   spec.authors            = { "Fumito Ito" => "weathercook@gmail.com" }
   spec.social_media_url   = "https://twitter.com/fumito_ito"
 
-  spec.ios.deployment_target = "11.0"
-  spec.osx.deployment_target = "10.12"
-  spec.tvos.deployment_target = "12.0"
-  spec.watchos.deployment_target = "6.0"
+  spec.ios.deployment_target = "12.0"
+  spec.osx.deployment_target = "10.15"
+  spec.tvos.deployment_target = "13.0"
+  spec.watchos.deployment_target = "7.0"
   spec.source       = { :git => "https://github.com/fumito-ito/SwiftyRemoteConfig.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources", "Sources/**/*.swift"
   spec.requires_arc = true
   spec.swift_versions = "5.0", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6"
 
   spec.static_framework = true
-  spec.dependency "FirebaseRemoteConfig", "~> 10.0.0"
+  spec.dependency "FirebaseRemoteConfig", "~> 11.0.0"
 
 end
