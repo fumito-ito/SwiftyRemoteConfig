@@ -13,6 +13,6 @@ public var RemoteConfigs = RemoteConfigAdapter<RemoteConfigKeys>(remoteConfig: R
 
 public extension RemoteConfig {
     func hasKey<T: RemoteConfigSerializable>(_ key: RemoteConfigKey<T>) -> Bool {
-        !self.configValue(forKey: key._key).stringValue.isEmpty
+        self.configValue(forKey: key._key).stringValue.isEmpty == false
     }
 }
