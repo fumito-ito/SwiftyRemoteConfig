@@ -35,7 +35,7 @@ public final class RemoteConfigObserver<T: RemoteConfigSerializable>: NSObject, 
             }
         }
 
-        private static func deserialize<T: RemoteConfigSerializable>(_ value: RemoteConfigValue?, for key: RemoteConfigKey<T>) -> T.T? where T.T == T {
+        private static func deserialize(_ value: RemoteConfigValue?, for key: RemoteConfigKey<T>) -> T.T? where T.T == T {
             guard let value = value else {
                 return nil
             }
