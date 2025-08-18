@@ -6,9 +6,9 @@ import PackageDescription
 let package = Package(
     name: "SwiftyRemoteConfig",
     platforms: [
-        .iOS(.v12),
+        .iOS(.v15),
         .macOS(.v10_15),
-        .tvOS(.v13),
+        .tvOS(.v15),
         .watchOS(.v7),
     ],
     products: [

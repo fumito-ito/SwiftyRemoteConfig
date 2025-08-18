@@ -435,14 +435,14 @@ final class ViewModel: ObservableObject {
 
 ### SDKs
 
-- **iOS** version >= 11.0
-- **macOS** version >= 10.12
-- **tvOS** version >= 12.0
-- **watchOS** version >= 6.0
+- **iOS** version >= 15.0
+- **macOS** version >= 10.15
+- **tvOS** version >= 15.0
+- **watchOS** version >= 7.0
 
 ### Frameworks
 
-- **Firebase iOS SDK** >= 10.0.0
+- **Firebase iOS SDK** >= 12.1.0
 
 ## Installation
 
