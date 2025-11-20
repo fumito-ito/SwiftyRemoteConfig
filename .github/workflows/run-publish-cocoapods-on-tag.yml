@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-15
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Lint Cocoapods
         run: pod lib lint --allow-warnings
       - name: Publish to Cocoapods registry
