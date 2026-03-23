@@ -34,18 +34,17 @@ extension RemoteConfigCombine {
     class Subscription<S: Subscriber> {
         private(set) var subscriber: S?
         private(set) var cancellable: AnyCancellable?
+        private let observer: RemoteConfigPropertyObserver
         let remoteConfig: RemoteConfig
 
-        init(subscriber: S, remoteConfig: RemoteConfig) {
+        init(subscriber: S, remoteConfig: RemoteConfig, key: String) {
             self.subscriber = subscriber
             self.remoteConfig = remoteConfig
-
-            cancellable = remoteConfig.combine
-                .fetchedPublisher()
-                .sink(
-                    receiveCompletion: { _ in },
-                    receiveValue: { [weak self] in self?.received() }
-                )
+            self.observer = .init(remoteConfig: remoteConfig, key: key)
+            
+            self.observer.handler = { [weak self] in
+                self?.received()
+            }
         }
 
         func cancelSubscription() {
@@ -62,7 +61,7 @@ extension RemoteConfigCombine {
 
         init(subscriber: S, remoteConfig: RemoteConfig, key: RemoteConfigKey<T>) {
             self.key = key
-            super.init(subscriber: subscriber, remoteConfig: remoteConfig)
+            super.init(subscriber: subscriber, remoteConfig: remoteConfig, key: key._key)
         }
 
         public func request(_ demand: Subscribers.Demand) {}
@@ -125,5 +124,22 @@ public extension RemoteConfigCombine {
     func fetchedPublisher<KeyStore, T: RemoteConfigSerializable>(for keyPath: KeyPath<KeyStore, RemoteConfigKey<T>>,
                                                                  adapter: RemoteConfigAdapter<KeyStore>) -> AnyPublisher<T.T, Never> where T.T == T {
         return RemoteConfigValuePublisher(remoteConfig: remoteConfig, key: adapter.keyStore[keyPath: keyPath]).eraseToAnyPublisher()
+    }
+}
+
+private class RemoteConfigPropertyObserver: NSObject {
+    var handler: (() -> Void)?
+    
+    init(remoteConfig: RemoteConfig, key: String) {
+        super.init()
+        remoteConfig.addObserver(self, forKeyPath: key, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        guard keyPath == keyPath else { return }
+        handler?()
     }
 }
